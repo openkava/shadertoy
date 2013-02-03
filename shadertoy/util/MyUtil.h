@@ -20,7 +20,6 @@
 + (NSString*) numberFormatNumber:(NSNumber*) input; // 123,32.2335
 + (NSString*) getYearMonth;                         // 201309
 + (NSString*) getYearMonth :(NSDate *)mydate;       // 201305
-+ (void)   setDefaultCompany:(UISearchBar*) bar;   
 + (float)  floatFormatString:(NSString*) input; // 123255.36655
 + (NSString *) jsonFromDic: (NSDictionary *) dic;
 + (void) openWeb: (NSString *) url;
@@ -32,7 +31,7 @@
 
 + (NSString *) encrypt : (NSString*) txt;
 + (NSString *) decrypt : (NSString*) txt;
-+ (BOOL)    sendOALogin;
+ 
 + (BOOL) isEmpty: (id) obj;
 + (BOOL) isStringEmpty: (NSString*) obj;
 + (void)checkNewVersion: (id) alertDelegate showHint:(BOOL) isShow;

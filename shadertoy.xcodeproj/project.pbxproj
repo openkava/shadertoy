@@ -9,14 +9,6 @@
 /* Begin PBXBuildFile section */
 		6C27386416BE17240064F722 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C27386216BE17240064F722 /* HomeViewController.m */; };
 		6C27386516BE17240064F722 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C27386316BE17240064F722 /* HomeViewController.xib */; };
-		6C27388916BE2ECB0064F722 /* flower.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388116BE2ECB0064F722 /* flower.fsh */; };
-		6C27388A16BE2ECB0064F722 /* julia.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388216BE2ECB0064F722 /* julia.fsh */; };
-		6C27388B16BE2ECB0064F722 /* ray_ball.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388316BE2ECB0064F722 /* ray_ball.fsh */; };
-		6C27388C16BE2ECB0064F722 /* raytrace.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388416BE2ECB0064F722 /* raytrace.fsh */; };
-		6C27388D16BE2ECB0064F722 /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388516BE2ECB0064F722 /* Shader.fsh */; };
-		6C27388E16BE2ECB0064F722 /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388616BE2ECB0064F722 /* Shader.vsh */; };
-		6C27388F16BE2ECB0064F722 /* simple.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388716BE2ECB0064F722 /* simple.fsh */; };
-		6C27389016BE2ECB0064F722 /* vision.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 6C27388816BE2ECB0064F722 /* vision.fsh */; };
 		6C27389116BE311B0064F722 /* flower.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C27388116BE2ECB0064F722 /* flower.fsh */; };
 		6C27389216BE311B0064F722 /* julia.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C27388216BE2ECB0064F722 /* julia.fsh */; };
 		6C27389316BE311B0064F722 /* ray_ball.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C27388316BE2ECB0064F722 /* ray_ball.fsh */; };
@@ -44,6 +36,8 @@
 		6C2738D116BE386C0064F722 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2738D016BE386B0064F722 /* Default-568h@2x.png */; };
 		6C2738D316BE390B0064F722 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2738D216BE390B0064F722 /* SystemConfiguration.framework */; };
 		6C2738D516BE39250064F722 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2738D416BE39250064F722 /* CFNetwork.framework */; };
+		6C2738DA16BE4A5D0064F722 /* monjori.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C2738D616BE47F10064F722 /* monjori.fsh */; };
+		6C2738DB16BE4A5D0064F722 /* test.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C2738D816BE49C70064F722 /* test.fsh */; };
 		6CAA21F31678A797009BB691 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F21678A797009BB691 /* UIKit.framework */; };
 		6CAA21F51678A797009BB691 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F41678A797009BB691 /* Foundation.framework */; };
 		6CAA21F71678A797009BB691 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F61678A797009BB691 /* CoreGraphics.framework */; };
@@ -105,6 +99,8 @@
 		6C2738D016BE386B0064F722 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		6C2738D216BE390B0064F722 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6C2738D416BE39250064F722 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6C2738D616BE47F10064F722 /* monjori.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = monjori.fsh; sourceTree = "<group>"; };
+		6C2738D816BE49C70064F722 /* test.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test.fsh; sourceTree = "<group>"; };
 		6CAA21EE1678A797009BB691 /* shadertoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadertoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA21F21678A797009BB691 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6CAA21F41678A797009BB691 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,6 +150,8 @@
 				6C27388616BE2ECB0064F722 /* Shader.vsh */,
 				6C27388716BE2ECB0064F722 /* simple.fsh */,
 				6C27388816BE2ECB0064F722 /* vision.fsh */,
+				6C2738D616BE47F10064F722 /* monjori.fsh */,
+				6C2738D816BE49C70064F722 /* test.fsh */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -359,6 +357,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2738DA16BE4A5D0064F722 /* monjori.fsh in Resources */,
+				6C2738DB16BE4A5D0064F722 /* test.fsh in Resources */,
 				6C27389116BE311B0064F722 /* flower.fsh in Resources */,
 				6C27389216BE311B0064F722 /* julia.fsh in Resources */,
 				6C27389316BE311B0064F722 /* ray_ball.fsh in Resources */,
@@ -388,14 +388,6 @@
 				6CAA22071678A797009BB691 /* AppDelegate.m in Sources */,
 				6CAA22141678A797009BB691 /* ViewController.m in Sources */,
 				6C27386416BE17240064F722 /* HomeViewController.m in Sources */,
-				6C27388916BE2ECB0064F722 /* flower.fsh in Sources */,
-				6C27388A16BE2ECB0064F722 /* julia.fsh in Sources */,
-				6C27388B16BE2ECB0064F722 /* ray_ball.fsh in Sources */,
-				6C27388C16BE2ECB0064F722 /* raytrace.fsh in Sources */,
-				6C27388D16BE2ECB0064F722 /* Shader.fsh in Sources */,
-				6C27388E16BE2ECB0064F722 /* Shader.vsh in Sources */,
-				6C27388F16BE2ECB0064F722 /* simple.fsh in Sources */,
-				6C27389016BE2ECB0064F722 /* vision.fsh in Sources */,
 				6C2738AD16BE35B50064F722 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				6C2738AE16BE35B50064F722 /* NSData+MKBase64.m in Sources */,
 				6C2738AF16BE35B50064F722 /* NSDate+RFC1123.m in Sources */,

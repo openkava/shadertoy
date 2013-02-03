@@ -33,4 +33,6 @@
 #define AES_KEY                 @"galaxy.mobile888"
 #define UPDATE_INTERVAL        -60.0*60.0*12.0
 
+
+#define DEFAULT_FRAGMENT        @"monjori" 
  

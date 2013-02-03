@@ -32,6 +32,7 @@ enum
 };
 
 GLfloat screenX ,screenY;
+GLfloat mouseX ,mouseY;
 
 GLfloat gCubeVertexData[216] = 
 {
@@ -92,7 +93,7 @@ GLfloat gCubeVertexData[216] =
     screenX = self.view.frame.size.width;
     screenY = self.view.frame.size.height;
     self.shaderVName =@"Shader";
-    self.shaderFName =@"simple";
+    self.shaderFName = DEFAULT_FRAGMENT;
     
     [self setupGL];
 }
@@ -216,8 +217,10 @@ GLfloat gCubeVertexData[216] =
     glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _normalMatrix.m);
     float t = -[self.startTime timeIntervalSinceNow];
     glUniform1f(uniforms[UNIFORM_TIME], t );
-    glUniform2f(uniforms[UNIFORM_MOUSE], t, t);
+    glUniform2f(uniforms[UNIFORM_MOUSE], mouseX ,mouseY);
     glUniform2f(uniforms[UNIFORM_RESOLUTION], screenX  ,screenY);
+    
+   // NSLog(@"MouseX:%f , %f screen:%fX%f " ,mouseX ,mouseY,screenX,screenY );
     
     //glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
     glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -377,5 +380,32 @@ GLfloat gCubeVertexData[216] =
     
     return YES;
 }
+#pragma mark - touch  methods
+CGPoint originalLocation;
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    originalLocation = [touch locationInView:self.view];
+}
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch =  [touches anyObject];
+    if(touch.tapCount == 1)
+    {
+        self.view.backgroundColor = [UIColor redColor];
+    }
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint currentLocation = [touch locationInView:self.view];
+    CGRect frame = self.view.frame;
+    frame.origin.x += currentLocation.x-originalLocation.x;
+    frame.origin.y += currentLocation.y-originalLocation.y;
+   // self.view.frame = frame;
+    mouseX = currentLocation.x;
+    mouseY = currentLocation.y;
+    
+}
 @end

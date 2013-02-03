@@ -242,9 +242,9 @@
 }
 + (void)checkNewVersion:(id) alertDelegate showHint:(BOOL) isShow
 {
-    NSDictionary *requestData= @{ @"Module" : MODULE_NAME  };;
-    NSString *method = @"Galaxy.Server.Environment.Mobile.UpdateManagement.GetUpdateItems";
-//    
+//    NSDictionary *requestData= @{ @"Module" : MODULE_NAME  };;
+//    NSString *method = @"Galaxy.Server.Environment.Mobile.UpdateManagement.GetUpdateItems";
+//
 //    [ApplicationDelegate.netDataPost postGetDataWithRequestData: requestData method: method usingBlockObject:^(NSDictionary *dataSet) {
 //        NSArray *dt = dataSet[@"t_Update_Items"];
 //        NSDictionary *item = dt[0];
