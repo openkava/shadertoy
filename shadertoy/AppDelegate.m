@@ -7,14 +7,42 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
+#import "HomeViewController.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+ 
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[ViewController alloc] init];
+    } else {
+        self.viewController = [[ViewController alloc] init];
+    }
+    self.window.rootViewController = self.viewController;
+    
+    
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        self.homeViewController = [[HomeViewController alloc] init];
+//    } else {
+//        self.homeViewController = [[HomeViewController alloc] init];
+//    }
+//    self.window.rootViewController = self.homeViewController;
+//    
+//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController] ;
+//    
+//    if ([self.window respondsToSelector:@selector(setRootViewController:)]) {
+//        self.window.rootViewController = self.navigationController;
+//    } else {
+//        [self.window addSubview:self.navigationController.view];
+//    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
