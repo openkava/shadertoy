@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "HomeViewController.h"
+#import "OpenGLView.h"
+
+
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -17,15 +21,23 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
- 
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] init];
-    } else {
-        self.viewController = [[ViewController alloc] init];
-    }
-    self.window.rootViewController = self.viewController;
+    // 直接调用gl窗口
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        self.viewController = [[ViewController alloc] init];
+//    } else {
+//        self.viewController = [[ViewController alloc] init];
+//    }
+//    self.window.rootViewController = self.viewController;
+//    
+    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds]; 
+    self.glView = [[OpenGLView alloc] initWithFrame:screenBounds] ;
+    [self.window addSubview:self.glView];
+    [self.window makeKeyAndVisible];
     
     
+    
+   //主界面
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 //        self.homeViewController = [[HomeViewController alloc] init];
 //    } else {

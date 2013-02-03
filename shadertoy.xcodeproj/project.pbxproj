@@ -38,6 +38,8 @@
 		6C2738D516BE39250064F722 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2738D416BE39250064F722 /* CFNetwork.framework */; };
 		6C2738DA16BE4A5D0064F722 /* monjori.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C2738D616BE47F10064F722 /* monjori.fsh */; };
 		6C2738DB16BE4A5D0064F722 /* test.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C2738D816BE49C70064F722 /* test.fsh */; };
+		6C76FB2E16BE7BCB000BD900 /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76FB2C16BE7BCB000BD900 /* OpenGLView.m */; };
+		6C76FB3116BE86D7000BD900 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C76FB3016BE86D7000BD900 /* QuartzCore.framework */; };
 		6CAA21F31678A797009BB691 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F21678A797009BB691 /* UIKit.framework */; };
 		6CAA21F51678A797009BB691 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F41678A797009BB691 /* Foundation.framework */; };
 		6CAA21F71678A797009BB691 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F61678A797009BB691 /* CoreGraphics.framework */; };
@@ -101,6 +103,9 @@
 		6C2738D416BE39250064F722 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6C2738D616BE47F10064F722 /* monjori.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = monjori.fsh; sourceTree = "<group>"; };
 		6C2738D816BE49C70064F722 /* test.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test.fsh; sourceTree = "<group>"; };
+		6C76FB2C16BE7BCB000BD900 /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		6C76FB2D16BE7BCB000BD900 /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		6C76FB3016BE86D7000BD900 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6CAA21EE1678A797009BB691 /* shadertoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadertoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA21F21678A797009BB691 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6CAA21F41678A797009BB691 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C76FB3116BE86D7000BD900 /* QuartzCore.framework in Frameworks */,
 				6C2738D516BE39250064F722 /* CFNetwork.framework in Frameworks */,
 				6C2738D316BE390B0064F722 /* SystemConfiguration.framework in Frameworks */,
 				6C2738CB16BE367F0064F722 /* Security.framework in Frameworks */,
@@ -241,6 +247,7 @@
 		6CAA21E31678A796009BB691 = {
 			isa = PBXGroup;
 			children = (
+				6C76FB3016BE86D7000BD900 /* QuartzCore.framework */,
 				6CAA21FC1678A797009BB691 /* shadertoy */,
 				6CAA21F11678A797009BB691 /* Frameworks */,
 				6CAA21EF1678A797009BB691 /* Products */,
@@ -281,6 +288,8 @@
 				6CAA22101678A797009BB691 /* Shader.vsh */,
 				6CAA22121678A797009BB691 /* ViewController.h */,
 				6CAA22131678A797009BB691 /* ViewController.m */,
+				6C76FB2C16BE7BCB000BD900 /* OpenGLView.m */,
+				6C76FB2D16BE7BCB000BD900 /* OpenGLView.h */,
 				6C27386116BE17240064F722 /* HomeViewController.h */,
 				6C27386216BE17240064F722 /* HomeViewController.m */,
 				6C27386316BE17240064F722 /* HomeViewController.xib */,
@@ -401,6 +410,7 @@
 				6C2738C516BE360B0064F722 /* NetDataPost.m in Sources */,
 				6C2738C916BE36250064F722 /* User.m in Sources */,
 				6C2738CF16BE379F0064F722 /* Encryption.m in Sources */,
+				6C76FB2E16BE7BCB000BD900 /* OpenGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

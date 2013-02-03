@@ -10,7 +10,7 @@
 #import "User.h"
 @class ViewController;
 @class HomeViewController;
-
+@class OpenGLView;
 
 #define ApplicationDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
@@ -24,4 +24,7 @@
 @property (strong, nonatomic) ViewController *viewController;
 @property (strong ,nonatomic)HomeViewController *homeViewController;
 @property (strong ,nonatomic) User *user;
+@property (nonatomic, retain)    OpenGLView *glView;
+
+
 @end

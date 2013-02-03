@@ -34,5 +34,5 @@
 #define UPDATE_INTERVAL        -60.0*60.0*12.0
 
 
-#define DEFAULT_FRAGMENT        @"monjori" 
+#define DEFAULT_FRAGMENT        @"simple" 
  
