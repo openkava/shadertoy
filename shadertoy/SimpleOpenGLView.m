@@ -25,6 +25,12 @@
     }
     return self;
 }
+GLfloat screenX ,screenY;
+GLfloat mouseX ,mouseY;
+GLfloat ftime;
+GLuint _mouse;
+GLuint _time;
+GLuint _resolution;
 
 + (Class)layerClass {
     return [CAEAGLLayer class];
@@ -32,6 +38,13 @@
 - (void)setupLayer {
     _eaglLayer = (CAEAGLLayer*) self.layer;
     _eaglLayer.opaque = YES;
+    
+    //init
+    self.startTime =[NSDate date];
+    screenX = self.frame.size.width;
+    screenY = self.frame.size.height;
+    self.shaderVName =@"simple1";
+    self.shaderFName =@"simple1";
 }
 - (void)setupContext {
     EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES2;
@@ -72,14 +85,22 @@
     glVertexAttribPointer(_colorSlot, 4, GL_FLOAT, GL_FALSE,
                           sizeof(Vertex), (GLvoid*) (sizeof(float) *3));
     
+    ftime = -[self.startTime timeIntervalSinceNow];
+    glUniform1f(_time, ftime );
+    glUniform2f(_mouse, mouseX ,mouseY);
+    glUniform2f(_resolution, screenX  ,screenY);
+    
     // 3
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]),
                    GL_UNSIGNED_BYTE, 0);
+   
+    
     
     [_context presentRenderbuffer:GL_RENDERBUFFER];
     
     
-    
+    NSLog(@"ftime: %f", ftime);
+
     
 }
 - (void)setupDisplayLink {
@@ -133,7 +154,7 @@
 - (void)compileShaders {
     
     // 1
-    GLuint vertexShader = [self compileShader:@"simple1"
+    GLuint vertexShader = [self compileShader:self.
                                      withType:GL_VERTEX_SHADER fileExt:@"vsh"];
     GLuint fragmentShader = [self compileShader:@"simple1"
                                        withType:GL_FRAGMENT_SHADER fileExt:@"fsh"];
@@ -161,8 +182,17 @@
     // 5
     _positionSlot = glGetAttribLocation(programHandle, "Position");
     _colorSlot = glGetAttribLocation(programHandle, "SourceColor");
+    _time = glGetUniformLocation(programHandle, "time");
+    _mouse = glGetUniformLocation(programHandle, "mouse");
+    _resolution = glGetUniformLocation(programHandle, "resolution");
+     
+    
     glEnableVertexAttribArray(_positionSlot);
     glEnableVertexAttribArray(_colorSlot);
+//    glEnableVertexAttribArray(_time);
+//    glEnableVertexAttribArray(_mouse);
+//    glEnableVertexAttribArray(_resolution);
+    
 }
 
 typedef struct {

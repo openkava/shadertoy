@@ -19,5 +19,7 @@
     GLuint _positionSlot;
     GLuint _colorSlot;
 }
-
+@property(strong ,nonatomic) NSString  *shaderVName;
+@property(strong ,nonatomic) NSString  *shaderFName;
+@property(strong ,nonatomic) NSDate    *startTime;
 @end
