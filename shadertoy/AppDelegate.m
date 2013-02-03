@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "HomeViewController.h"
 #import "OpenGLView.h"
+#import "SimpleOpenGLView.h"
 
 
 
@@ -30,12 +31,15 @@
 //    self.window.rootViewController = self.viewController;
 //    
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds]; 
-    self.glView = [[OpenGLView alloc] initWithFrame:screenBounds] ;
-    [self.window addSubview:self.glView];
+//    CGRect screenBounds = [[UIScreen mainScreen] bounds]; 
+//    self.glView = [[OpenGLView alloc] initWithFrame:screenBounds] ;
+//    [self.window addSubview:self.glView];
+//    [self.window makeKeyAndVisible];
+//    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    SimpleOpenGLView *v = [[SimpleOpenGLView alloc] initWithFrame:screenBounds] ;
+    [self.window addSubview:v];
     [self.window makeKeyAndVisible];
-    
-    
     
    //主界面
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
