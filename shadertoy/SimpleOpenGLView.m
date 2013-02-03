@@ -44,7 +44,7 @@ GLuint _resolution;
     screenX = self.frame.size.width;
     screenY = self.frame.size.height;
     self.shaderVName =@"simple1";
-    self.shaderFName =@"simple1";
+    self.shaderFName =@"test";
 }
 - (void)setupContext {
     EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES2;
@@ -99,7 +99,7 @@ GLuint _resolution;
     [_context presentRenderbuffer:GL_RENDERBUFFER];
     
     
-    NSLog(@"ftime: %f", ftime);
+   // NSLog(@"ftime: %f", ftime);
 
     
 }
@@ -154,9 +154,9 @@ GLuint _resolution;
 - (void)compileShaders {
     
     // 1
-    GLuint vertexShader = [self compileShader:self.
+    GLuint vertexShader = [self compileShader:self.shaderVName
                                      withType:GL_VERTEX_SHADER fileExt:@"vsh"];
-    GLuint fragmentShader = [self compileShader:@"simple1"
+    GLuint fragmentShader = [self compileShader:self.shaderFName
                                        withType:GL_FRAGMENT_SHADER fileExt:@"fsh"];
     
     // 2
@@ -225,6 +225,34 @@ const GLubyte Indices[] = {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
    //  NSLog(@"sizeof Indices: %ld",sizeof(Indices));
+    
+}
+#pragma mark - touch  methods
+CGPoint originalLocation;
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    originalLocation = [touch locationInView:self];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch =  [touches anyObject];
+    if(touch.tapCount == 1)
+    {
+        self.backgroundColor = [UIColor redColor];
+    }
+}
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint currentLocation = [touch locationInView:self];
+    CGRect frame = self.frame;
+    frame.origin.x += currentLocation.x-originalLocation.x;
+    frame.origin.y += currentLocation.y-originalLocation.y;
+    // self.frame = frame;
+    mouseX = currentLocation.x;
+    mouseY = currentLocation.y;
     
 }
 

@@ -44,6 +44,8 @@
 		6C87EEB816BE98100001D341 /* SimpleOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87EEB716BE98100001D341 /* SimpleOpenGLView.m */; };
 		6C87EEBD16BE9CCE0001D341 /* simple1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C87EEB916BE9B650001D341 /* simple1.vsh */; };
 		6C87EEBE16BE9CCE0001D341 /* simple1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6C87EEBB16BE9B7C0001D341 /* simple1.fsh */; };
+		6CA4416816BEAFBE0078F54D /* apple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6CA4416316BEAED90078F54D /* apple.fsh */; };
+		6CA4416916BEAFBE0078F54D /* heart.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6CA4416616BEAF900078F54D /* heart.fsh */; };
 		6CAA21F31678A797009BB691 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F21678A797009BB691 /* UIKit.framework */; };
 		6CAA21F51678A797009BB691 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F41678A797009BB691 /* Foundation.framework */; };
 		6CAA21F71678A797009BB691 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA21F61678A797009BB691 /* CoreGraphics.framework */; };
@@ -115,6 +117,8 @@
 		6C87EEB716BE98100001D341 /* SimpleOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleOpenGLView.m; sourceTree = "<group>"; };
 		6C87EEB916BE9B650001D341 /* simple1.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple1.vsh; sourceTree = "<group>"; };
 		6C87EEBB16BE9B7C0001D341 /* simple1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple1.fsh; sourceTree = "<group>"; };
+		6CA4416316BEAED90078F54D /* apple.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = apple.fsh; sourceTree = "<group>"; };
+		6CA4416616BEAF900078F54D /* heart.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = heart.fsh; sourceTree = "<group>"; };
 		6CAA21EE1678A797009BB691 /* shadertoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shadertoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA21F21678A797009BB691 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6CAA21F41678A797009BB691 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,6 +173,8 @@
 				6C2738D816BE49C70064F722 /* test.fsh */,
 				6C87EEB916BE9B650001D341 /* simple1.vsh */,
 				6C87EEBB16BE9B7C0001D341 /* simple1.fsh */,
+				6CA4416316BEAED90078F54D /* apple.fsh */,
+				6CA4416616BEAF900078F54D /* heart.fsh */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -380,6 +386,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA4416816BEAFBE0078F54D /* apple.fsh in Resources */,
+				6CA4416916BEAFBE0078F54D /* heart.fsh in Resources */,
 				6C87EEBD16BE9CCE0001D341 /* simple1.vsh in Resources */,
 				6C87EEBE16BE9CCE0001D341 /* simple1.fsh in Resources */,
 				6C2738DA16BE4A5D0064F722 /* monjori.fsh in Resources */,

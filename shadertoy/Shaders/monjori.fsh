@@ -1,5 +1,5 @@
 
-
+//error
 precision mediump float;
 varying lowp vec4 colorVarying;
 
