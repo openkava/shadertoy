@@ -38,7 +38,8 @@
 //    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     SimpleOpenGLView *v = [[SimpleOpenGLView alloc] initWithFrame:screenBounds] ;
-    [self.window addSubview:v];
+     //self.window.rootViewController =v;
+     [self.window addSubview:v];
     [self.window makeKeyAndVisible];
     
    //主界面
