@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.mTitle.text =@"1";
     
 }
 
@@ -62,16 +62,17 @@
     [self.navigationController pushViewController:v animated:YES];
 }
 SimpleOpenGLView *simpleGLView;
-SimpleOpenGLView *simpleGLView2;
-BOOL isTog =NO;
 - (IBAction)doNext:(id)sender {
     
+    [self.mTitle resignFirstResponder];
+    
+    int itemID = self.mTitle.text.intValue;
      
-     
-     
-    self.mySlider.value = self.mySlider.value +1;
-    int itemID = (int)self.mySlider.value;
-    NSString *path = [NSString stringWithFormat:@"%@%d" , GLSL_FRAGMENT_JSON, (int)self.mySlider.value ];
+    self.mySlider.value = itemID +1;
+    
+    self.mTitle.text = [NSString stringWithFormat:@"%d" ,(int)self.mySlider.value ];
+    //int itemID = (int)self.mySlider.value;
+    NSString *path = [NSString stringWithFormat:@"%@%d" , GLSL_FRAGMENT_JSON, itemID ];
     
     [ApplicationDelegate.netDataPost postGetDataWithRequestData: path  usingBlockObject:^(NSDictionary *dataSet) {
         
@@ -79,45 +80,20 @@ BOOL isTog =NO;
         NSString *fsh =  dataSet[@"code"]  ;
         //NSLog(@"%@" ,fsh);
         NSLog(@"this is : %d" ,(int)self.mySlider.value);
-        if(isTog ==YES)
+        
+        if(simpleGLView!=nil)
         {
-            if(simpleGLView!=nil)
-            {
-                [simpleGLView removeFromSuperview];
-                simpleGLView =nil;
-            }
-            CGRect screenBounds  = self.mGLContainerView.bounds;
-            simpleGLView  =  [SimpleOpenGLView alloc]  ;
-            simpleGLView.shaderF = fsh;
-            simpleGLView = [simpleGLView initWithFrame:screenBounds];
-            [self.mGLContainerView addSubview:simpleGLView];
-            [self.mGLContainerView bringSubviewToFront:simpleGLView];
-            
-
+            [simpleGLView removeFromSuperview];
+            simpleGLView =nil;
         }
-        else{
-            if(simpleGLView2!=nil)
-            {
-                [simpleGLView2 removeFromSuperview];
-                simpleGLView2 =nil;
-            }
-            CGRect screenBounds  = self.mGLContainerView2.bounds;
-            simpleGLView2  =  [SimpleOpenGLView alloc]  ;
-            simpleGLView2.shaderF = fsh;
-            simpleGLView2 = [simpleGLView2 initWithFrame:screenBounds];
-            [self.mGLContainerView2 addSubview:simpleGLView2];
-            [self.mGLContainerView2 bringSubviewToFront:simpleGLView2];
-
-        }
-         isTog = !isTog;   
+        CGRect screenBounds  = self.mGLContainerView.bounds;
+        simpleGLView  =  [SimpleOpenGLView alloc]  ;
+        simpleGLView.shaderF = fsh;
+        simpleGLView = [simpleGLView initWithFrame:screenBounds];
+        [self.mGLContainerView addSubview:simpleGLView];
+        [self.mGLContainerView bringSubviewToFront:simpleGLView];
         
-        
-//        UIViewController *v = [[UIViewController alloc] init];
-//        [v.view addSubview:simpleGLView];
-//        
-//        
-//       [self.navigationController pushViewController:v animated:YES];
-         
+  
          
        
     }];
@@ -130,6 +106,7 @@ BOOL isTog =NO;
     [self setMySlider:nil];
     [self setMTitle:nil];
     [self setMGLContainerView2:nil];
+    [self setMTitle:nil];
     [super viewDidUnload];
 }
 - (IBAction)doSliderChange:(id)sender {

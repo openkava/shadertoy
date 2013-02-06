@@ -16,8 +16,9 @@
 - (IBAction)doNext:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *mGLContainerView;
 @property (weak, nonatomic) IBOutlet UISlider *mySlider;
-@property (weak, nonatomic) IBOutlet UILabel *mTitle;
+ 
 - (IBAction)doSliderChange:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *mGLContainerView2;
+@property (weak, nonatomic) IBOutlet UITextField *mTitle;
 
 @end

@@ -114,6 +114,7 @@ GLuint _resolution;
 }
 - (void)setupDisplayLink {
     CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+    displayLink.frameInterval = 2;
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 - (void)dealloc
