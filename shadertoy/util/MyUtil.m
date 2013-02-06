@@ -273,5 +273,17 @@
 //    }];
     
 }
-
++ (NSString*) loadFile:(NSString*)fileName  fileExt:(NSString*) ext {
+    
+    NSString* shaderPath = [[NSBundle mainBundle] pathForResource:fileName
+                                                           ofType:ext];
+    NSError* error;
+    NSString* shaderString = [NSString stringWithContentsOfFile:shaderPath
+                                                       encoding:NSUTF8StringEncoding error:&error];
+    if (!shaderString) {
+        NSLog(@"Error loading shader: %@", error.localizedDescription);
+        return @"";
+    }
+    return shaderString;
+}
 @end

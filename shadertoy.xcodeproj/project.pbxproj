@@ -57,6 +57,8 @@
 		6CAA220F1678A797009BB691 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA220E1678A797009BB691 /* Shader.fsh */; };
 		6CAA22111678A797009BB691 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 6CAA22101678A797009BB691 /* Shader.vsh */; };
 		6CAA22141678A797009BB691 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAA22131678A797009BB691 /* ViewController.m */; };
+		D66049C616C2296100AB3752 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66049C416C2296000AB3752 /* TestViewController.m */; };
+		D66049C716C2296100AB3752 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66049C516C2296100AB3752 /* TestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +138,9 @@
 		6CAA22121678A797009BB691 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6CAA22131678A797009BB691 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6CAA221B1678A797009BB691 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D66049C316C2296000AB3752 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = test/TestViewController.h; sourceTree = "<group>"; };
+		D66049C416C2296000AB3752 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = test/TestViewController.m; sourceTree = "<group>"; };
+		D66049C516C2296100AB3752 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestViewController.xib; path = test/TestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,9 +304,9 @@
 			isa = PBXGroup;
 			children = (
 				6C87EEB416BE96BB0001D341 /* readme.txt */,
+				6C27386616BE17A60064F722 /* ConfigSetting.h */,
 				6CAA22051678A797009BB691 /* AppDelegate.h */,
 				6CAA22061678A797009BB691 /* AppDelegate.m */,
-				6C27386616BE17A60064F722 /* ConfigSetting.h */,
 				6CAA220E1678A797009BB691 /* Shader.fsh */,
 				6CAA22101678A797009BB691 /* Shader.vsh */,
 				6CAA22121678A797009BB691 /* ViewController.h */,
@@ -313,6 +318,7 @@
 				6C27386116BE17240064F722 /* HomeViewController.h */,
 				6C27386216BE17240064F722 /* HomeViewController.m */,
 				6C27386316BE17240064F722 /* HomeViewController.xib */,
+				D66049C816C2296700AB3752 /* test */,
 				6C2738BF16BE360B0064F722 /* util */,
 				6C2738C616BE36250064F722 /* model */,
 				6C2738CC16BE379F0064F722 /* common */,
@@ -334,6 +340,16 @@
 				6CAA22041678A797009BB691 /* shadertoy-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D66049C816C2296700AB3752 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				D66049C316C2296000AB3752 /* TestViewController.h */,
+				D66049C416C2296000AB3752 /* TestViewController.m */,
+				D66049C516C2296100AB3752 /* TestViewController.xib */,
+			);
+			name = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +424,7 @@
 				6C2738BE16BE35E90064F722 /* goForwardItem@2x.png in Resources */,
 				6C2738D116BE386C0064F722 /* Default-568h@2x.png in Resources */,
 				6C87EEB516BE96BB0001D341 /* readme.txt in Resources */,
+				D66049C716C2296100AB3752 /* TestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +454,7 @@
 				6C2738CF16BE379F0064F722 /* Encryption.m in Sources */,
 				6C76FB2E16BE7BCB000BD900 /* OpenGLView.m in Sources */,
 				6C87EEB816BE98100001D341 /* SimpleOpenGLView.m in Sources */,
+				D66049C616C2296100AB3752 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,4 +22,8 @@
 @property(strong ,nonatomic) NSString  *shaderVName;
 @property(strong ,nonatomic) NSString  *shaderFName;
 @property(strong ,nonatomic) NSDate    *startTime;
+
+@property(strong ,nonatomic) NSString  *shaderV;
+@property(strong ,nonatomic) NSString  *shaderF;
+
 @end

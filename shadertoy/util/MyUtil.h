@@ -35,6 +35,8 @@
 + (BOOL) isEmpty: (id) obj;
 + (BOOL) isStringEmpty: (NSString*) obj;
 + (void)checkNewVersion: (id) alertDelegate showHint:(BOOL) isShow;
-
++ (NSString*) loadFile:(NSString*)fileName  fileExt:(NSString*) ext ;
+    
+ 
 
 @end

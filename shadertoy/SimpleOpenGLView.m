@@ -7,7 +7,7 @@
 // http://www.cnblogs.com/andyque/archive/2011/08/08/2131019.html
 
 #import "SimpleOpenGLView.h"
-
+#import "util/MyUtil.h"
 @implementation SimpleOpenGLView
 
 // Replace initWithFrame with this
@@ -15,6 +15,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self initFirst] ;
         [self setupLayer];
         [self setupContext];
         [self setupRenderBuffer];
@@ -39,13 +40,21 @@ GLuint _resolution;
     _eaglLayer = (CAEAGLLayer*) self.layer;
     _eaglLayer.opaque = YES;
     
-    //init
+}
+-(void) initFirst {
+    
     self.startTime =[NSDate date];
     screenX = self.frame.size.width;
     screenY = self.frame.size.height;
     self.shaderVName =@"simple1";
     self.shaderFName =@"test";
+    
+     self.shaderV  = [MyUtil loadFile : self.shaderVName fileExt:@"vsh"];
+    if(self.shaderF ==nil || self.shaderF.length <1)
+       self.shaderF  = [MyUtil loadFile : self.shaderFName fileExt:@"fsh"];
 }
+
+
 - (void)setupContext {
     EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES2;
     _context = [[EAGLContext alloc] initWithAPI:api];
@@ -113,19 +122,8 @@ GLuint _resolution;
 }
 
 
-- (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType fileExt:(NSString*) ext {
-    
-    // 1
-    NSString* shaderPath = [[NSBundle mainBundle] pathForResource:shaderName
-                                                           ofType:ext];
-    NSError* error;
-    NSString* shaderString = [NSString stringWithContentsOfFile:shaderPath
-                                                       encoding:NSUTF8StringEncoding error:&error];
-    if (!shaderString) {
-        NSLog(@"Error loading shader: %@", error.localizedDescription);
-        exit(1);
-    }
-    
+- (GLuint)compileShader:(NSString*)shaderString withType:(GLenum)shaderType  {
+   
     // 2
     GLuint shaderHandle = glCreateShader(shaderType);
     
@@ -154,10 +152,8 @@ GLuint _resolution;
 - (void)compileShaders {
     
     // 1
-    GLuint vertexShader = [self compileShader:self.shaderVName
-                                     withType:GL_VERTEX_SHADER fileExt:@"vsh"];
-    GLuint fragmentShader = [self compileShader:self.shaderFName
-                                       withType:GL_FRAGMENT_SHADER fileExt:@"fsh"];
+    GLuint vertexShader = [self compileShader:self.shaderV      withType:GL_VERTEX_SHADER]  ;
+    GLuint fragmentShader = [self compileShader:self.shaderF     withType:GL_FRAGMENT_SHADER ];
     
     // 2
     GLuint programHandle = glCreateProgram();

@@ -35,30 +35,44 @@
 //    self.glView = [[OpenGLView alloc] initWithFrame:screenBounds] ;
 //    [self.window addSubview:self.glView];
 //    [self.window makeKeyAndVisible];
-//    
+//
+
+#undef DEBUG_ME
+    
+#ifdef DEBUG_ME
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     SimpleOpenGLView *v = [[SimpleOpenGLView alloc] initWithFrame:screenBounds] ;
      //self.window.rootViewController =v;
      [self.window addSubview:v];
     [self.window makeKeyAndVisible];
+
+#else 
     
    //主界面
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        self.homeViewController = [[HomeViewController alloc] init];
-//    } else {
-//        self.homeViewController = [[HomeViewController alloc] init];
-//    }
-//    self.window.rootViewController = self.homeViewController;
-//    
-//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController] ;
-//    
-//    if ([self.window respondsToSelector:@selector(setRootViewController:)]) {
-//        self.window.rootViewController = self.navigationController;
-//    } else {
-//        [self.window addSubview:self.navigationController.view];
-//    }
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.homeViewController = [[HomeViewController alloc] init];
+    } else {
+        self.homeViewController = [[HomeViewController alloc] init];
+    }
+    self.window.rootViewController = self.homeViewController;
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController] ;
+    
+    if ([self.window respondsToSelector:@selector(setRootViewController:)]) {
+        self.window.rootViewController = self.navigationController;
+    } else {
+        [self.window addSubview:self.navigationController.view];
+    }
     
     [self.window makeKeyAndVisible];
+    
+    [self.netDataPost useCache];
+    self.netDataPost = [[NetDataPost alloc] initWithHostName:GLSL_WWW_ROOT customHeaderFields:nil];
+    self.user  = [[User alloc] init];
+
+#endif
+
+    
     
     return YES;
 }

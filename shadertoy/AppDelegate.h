@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "util/NetDataPost.h"
+
+
 @class ViewController;
 @class HomeViewController;
 @class OpenGLView;
@@ -25,6 +28,10 @@
 @property (strong ,nonatomic)HomeViewController *homeViewController;
 @property (strong ,nonatomic) User *user;
 @property (nonatomic, retain)    OpenGLView *glView;
+
+
+@property (strong, nonatomic) NetDataPost *netDataPost ;
+@property (strong ,nonatomic) NSDate *lastCheckUpdateDT;
 
 
 @end

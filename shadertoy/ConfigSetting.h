@@ -10,7 +10,7 @@
 #define Galaxy_ConfigSetting_h
 
 
-#define DEBUG_me 
+#define DEBUG_ME 
 
 
 #endif
@@ -35,4 +35,5 @@
 
 
 #define DEFAULT_FRAGMENT        @"simple" 
- 
+#define GLSL_FRAGMENT_JSON      @"item/"  
+#define GLSL_WWW_ROOT           @"glsl.heroku.com/"  
