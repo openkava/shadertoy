@@ -119,6 +119,10 @@ GLuint _resolution;
 - (void)dealloc
 {
         _context = nil;
+  //  _eaglLayer = nil;
+    self.shaderF =nil;
+    self.shaderV =nil;
+    
 }
 
 
