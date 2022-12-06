@@ -25,7 +25,15 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 
 \cos (2\theta) = \cos^2 \theta - \sin^2 \theta
 
+
 (sum_{k=1}^n a_k b_k)^2
 
-```
 
+```
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
